@@ -1,3 +1,44 @@
-body {
+@import "global";
+
+.header {
+  height: 615px;
+  background: #242527;
+  color: #fff;
+
+  &__top {
+    position: relative;
     display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 48px;
+    padding-top: 32px;
+    font-size: 16px;
+
+    .logo {
+      height: 51px;
+      color: #fff;
+    }
+  }
+}
+
+.menu {
+    display: inline-block;
+    &-top {
+        display: flex;
+    }
+    &-bottom {
+        display: flex;
+    }
+    &-slider {
+        &__img {
+            width: 6px;
+            height: 12px;
+            cursor: pointer;
+        }
+    }
+    &-btn {
+        &__line {
+            display: flex;
+        }
+    }
 }

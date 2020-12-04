@@ -1,3 +1,3 @@
 $(function(){
-    $('body').css('background-color', 'white')
+    // $('body').css('background-color', 'white')
 })
