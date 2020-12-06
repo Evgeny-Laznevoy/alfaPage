@@ -1,4 +1,6 @@
 @import "global";
+@import "vars";
+@import "fonts";
 
 .header {
   height: 615px;
@@ -8,37 +10,177 @@
   &__top {
     position: relative;
     display: flex;
-    justify-content: space-around;
+    // justify-content: space-around;
     width: 100%;
-    height: 48px;
+    height: 80px;
     padding-top: 32px;
     font-size: 16px;
 
     .logo {
-      height: 51px;
+      display: flex;
+      height: 45px;
+      align-items: center;
       color: #fff;
     }
   }
 }
 
 .menu {
-    display: inline-block;
-    &-top {
-        display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 48px;
+  margin-left: 16px;
+  &-top {
+    display: flex;
+    align-items: center;
+    a {
+      font-size: 12px;
+      line-height: 16px;
+      // letter-spacing: .05em;
+      text-transform: uppercase;
+      font-weight: 700;
+      //   line-height: 22px;
+      // @extend %sf-bold;
+      // font-weight: 700;
     }
-    &-bottom {
-        display: flex;
+    &__left {
+      display: flex;
+      line-height: 18px;
     }
-    &-slider {
-        &__img {
-            width: 6px;
-            height: 12px;
-            cursor: pointer;
+    &__right {
+      display: none;
+      margin-left: 16px;
+    }
+    &__list-item {
+      &:hover {
+        transition: color 0.1s;
+        color: #8f8f8f;
+      }
+      &:not(:nth-child(3n)) {
+        margin-right: 16px;
+      }
+    }
+  }
+  &-bottom {
+    display: flex;
+    &__list-item {
+      position: relative;
+      margin-right: 16px;
+    }
+    a {
+      line-height: 21px;
+    }
+  }
+  &-slider {
+    display: flex;
+    min-width: 21px;
+    height: 20px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 2px;
+    cursor: pointer;
+    &__img {
+      width: 6px;
+      height: 12px;
+    }
+  }
+  &-btn {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    right: 0;
+    opacity: 1;
+    transition: opacity 0.3s ease;
+    transition-delay: 0.3s;
+
+    &__request {
+      display: flex;
+      background-color: transparent;
+      color: #fff;
+      max-height: 32px;
+      padding: 7px 15px;
+      font-size: 14px;
+      border: 1px solid hsla(0, 0%, 100%, 0.4);
+      margin: 0;
+      border-radius: 4px;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: none;
+      text-decoration: none;
+
+      &-img {
+        width: 16px;
+        height: 16px;
+        margin-right: 8px;
+        display: block;
+        position: relative;
+        .svg {
+          position: absolute;
+          content: "";
+          background: url(../images/online-applications-blue.svg);
+          width: 100%;
+          height: 100%;
+          background-repeat: no-repeat;
+          background-size: contain;
         }
+      }
+
+      &-text {
+        font-size: 14px;
+        line-height: 16px;
+        font-weight: 600;
+        padding-right: 8px;
+      }
     }
-    &-btn {
-        &__line {
-            display: flex;
-        }
+
+    &__bank {
+      position: relative;
+      margin-left: 12px;
+
+      &-link {
+        display: inline-flex;
+        height: 32px;
+        box-sizing: border-box;
+        align-items: center;
+        justify-content: space-around;
+        padding: 7px 15px;
+        border: 1px solid transparent;
+        background-color: rgba(239, 49, 36, 0.85);
+        border-radius: 4px;
+        box-shadow: none;
+        color: #fff;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-weight: 600;
+        font-size: 14px;
+      }
     }
+
+    &__line {
+      display: flex;
+    }
+
+    &__search {
+      position: relative;
+      display: flex;
+      height: 32px;
+      width: 32px;
+      margin-right: 8px;
+
+      img {
+        position: absolute;
+        top: 9px;
+        left: 7px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.bottom-indent {
+  border-bottom: 1px solid #fff;
+  padding-bottom: 1px;
 }
